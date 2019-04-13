@@ -1,0 +1,51 @@
+<div class="aside-inner">
+  <ul nz-menu [nzMode]="'inline'" [nzInlineCollapsed]="collapsedService.collapsed">
+    <ng-template [ngTemplateOutlet]="menuTpl" [ngTemplateOutletContext]="{ $implicit: menus$ | async, level: 1 }"></ng-template>
+
+    <!-- 遍历模板 -->
+    <ng-template #menuTpl let-menus let-level="level">
+      <ng-container *ngFor="let menu of menus">
+
+        <!-- 没有子元素 -->
+        <li
+          nz-menu-item
+          *ngIf="!menu.children"
+          [nzPaddingLeft]="level * 24"
+          [nzDisabled]="menu.disabled"
+          [nzSelected]="menu.selected"
+          [routerLinkActive]="'ant-menu-item-selected'"
+        >
+          <a [routerLink]="menu.link ? menu.link : menu.externalLink ? menu.externalLink : ''">
+            <span title>
+              <i nz-icon [type]="menu.icon" *ngIf="menu.icon"></i>
+              <span>{{menu.title}}</span>
+            </span>
+          </a>
+        </li>
+
+        <!-- 有子元素 -->
+        <li
+          nz-submenu
+          *ngIf="menu.children"
+          [nzPaddingLeft]="level * 24"
+          [nzOpen]="menu.open"
+          [nzDisabled]="menu.disabled"
+        >
+          <span title>
+            <i nz-icon [type]="menu.icon" *ngIf="menu.icon"></i>
+            <span>{{ menu.title }}</span>
+          </span>
+
+          <!-- 继续遍历 -->
+          <ul>
+            <ng-template [ngTemplateOutlet]="menuTpl" [ngTemplateOutletContext]="{ $implicit: menu.children, level: level + 1 }"></ng-template>
+          </ul>
+        </li>
+
+      </ng-container>
+    </ng-template>
+  </ul>
+</div>
+
+
+

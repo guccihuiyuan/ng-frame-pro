@@ -1,0 +1,18 @@
+<!-- site -->
+<div class="site">
+  <!-- header -->
+  <app-layout-admin-default-header class="header"></app-layout-admin-default-header>
+
+  <!-- aside -->
+  <app-layout-admin-default-aside class="aside" [ngClass]="{'layout-admin-collapsed': collapsedService.collapsed}"></app-layout-admin-default-aside>
+
+  <!-- main -->
+  <main class="main" [ngClass]="{'layout-admin-main-collapsed': collapsedService.collapsed}">
+    <div class="content">
+      <router-outlet></router-outlet>
+    </div>
+
+    <!-- footer -->
+    <app-layout-admin-default-footer class="footer"></app-layout-admin-default-footer>
+  </main>
+</div>
