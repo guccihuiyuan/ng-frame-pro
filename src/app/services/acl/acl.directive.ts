@@ -18,17 +18,19 @@ export class ACLDirective implements OnDestroy {
     this.set(this.srv.parseAbility(value));
   }
 
-  constructor(private el: ElementRef, private renderer: Renderer2, private srv: ACLService) {
+  constructor(
+    private el: ElementRef,
+    private renderer: Renderer2,
+    private srv: ACLService
+  ) {
     this._change$ = this.srv.change.subscribe(() => this.set(this._value));
   }
 
   private set(value: ACLCanType) {
-    const CLS = 'acl__hide';
-    const el = this.el.nativeElement;
     if (this.srv.can(value)) {
-      this.renderer.removeClass(el, CLS);
+      this.el.nativeElement.style.display = 'run-in';
     } else {
-      this.renderer.addClass(el, CLS);
+      this.el.nativeElement.style.display = 'none';
     }
     this._value = value;
   }
