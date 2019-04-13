@@ -15,6 +15,7 @@ import {RoutesModule} from '@routes/routes.module';
 import {NZ_I18N, zh_CN} from 'ng-zorro-antd';
 import {registerLocaleData} from '@angular/common';
 import zh from '@angular/common/locales/zh';
+import {AngKitThemeModule} from '@ang-kit/theme';
 registerLocaleData(zh);
 
 
@@ -27,6 +28,7 @@ registerLocaleData(zh);
     BrowserModule,
     BrowserAnimationsModule,
     HttpClientModule,
+    AngKitThemeModule,
     ShareModule,
     ServicesModule,
     LayoutModule,

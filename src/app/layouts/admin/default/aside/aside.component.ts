@@ -2,8 +2,9 @@ import {Component, Injector, OnInit} from '@angular/core';
 import {Router} from '@angular/router';
 import {BaseComponent} from '@components/base.component';
 import {CollapsedService} from '../services/collapsed.service';
+import {AdminMenuService} from '@ang-kit/theme';
 
-import {AdminMenuService} from '@services/admin-menu/admin-menu.service';
+// import {AdminMenuService} from '@services/admin-menu/admin-menu.service';
 
 @Component({
   selector: 'app-layout-admin-default-aside',
