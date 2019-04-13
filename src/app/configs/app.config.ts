@@ -7,6 +7,10 @@ export const APP_CONFIG = {
     LOGO: './assets/logo-full.svg',
     LOGO_MINI: './assets/logo.svg'
   },
+  // 路由配置
+  ROUTER: {
+
+  },
   // 正则表达式
   REGEX: {
     // 没有空格

@@ -9,7 +9,7 @@ import {CollapsedService} from './services/collapsed.service';
 export class LayoutAdminDefaultComponent extends BaseComponent {
   constructor(
     protected injector: Injector,
-    private collapsedService: CollapsedService
+    protected collapsedService: CollapsedService
   ) {
     super(injector);
   }

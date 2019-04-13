@@ -1,24 +1,24 @@
-import {Component, OnInit} from '@angular/core';
-import {CollapsedService} from '@layouts/admin/default/services/collapsed.service';
+import {Component, Injector, OnInit} from '@angular/core';
 import {Router} from '@angular/router';
+import {BaseComponent} from '@components/base.component';
+import {CollapsedService} from '../services/collapsed.service';
+
 import {AdminMenuService} from '@services/admin-menu/admin-menu.service';
-import {Observable} from 'rxjs';
-import {AdminMenu} from '@services/admin-menu/admin-menu.interface';
 
 @Component({
   selector: 'app-layout-admin-default-aside',
   templateUrl: './aside.component.html',
   styleUrls: ['./aside.component.less']
 })
-export class LayoutAdminDefaultAsideComponent implements OnInit {
-  // 菜单观察者
-  menus$: Observable<AdminMenu[]> = null;
-
+export class LayoutAdminDefaultAsideComponent extends BaseComponent implements OnInit {
   constructor(
+    protected injector: Injector,
     private router: Router,
     protected collapsedService: CollapsedService,
     private adminMenuService: AdminMenuService
-  ) {}
+  ) {
+    super(injector);
+  }
 
   ngOnInit(): void {
     this.adminMenuService.add(
@@ -61,7 +61,5 @@ export class LayoutAdminDefaultAsideComponent implements OnInit {
         }
       ]
     );
-    // 监听菜单的变化
-    this.menus$ = this.adminMenuService.change;
   }
 }
