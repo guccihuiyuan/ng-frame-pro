@@ -1,13 +1,13 @@
 import {NgModule} from '@angular/core';
 import {ShareModule} from '@share/share.module';
 
-import {LayoutAdminDefaultComponent} from '@layouts/admin/default/default.component';
-import {LayoutAdminDefaultHeaderComponent} from '@layouts/admin/default/header/header.component';
-import {LayoutAdminDefaultAsideComponent} from '@layouts/admin/default/aside/aside.component';
-import {LayoutAdminDefaultFooterComponent} from '@layouts/admin/default/footer/footer.component';
+import {LayoutAdminDefaultComponent} from './default.component';
+import {LayoutAdminDefaultHeaderComponent} from './header/header.component';
+import {LayoutAdminDefaultAsideComponent} from './aside/aside.component';
+import {LayoutAdminDefaultFooterComponent} from './footer/footer.component';
 
-
-import {CollapsedService} from '@layouts/admin/default/services/collapsed.service';
+// 服务类
+import {CollapsedService} from './services/collapsed.service';
 
 const LAYOUTS = [
   LayoutAdminDefaultComponent

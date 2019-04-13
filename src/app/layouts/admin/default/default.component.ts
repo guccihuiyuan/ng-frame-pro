@@ -1,13 +1,16 @@
-import {Component} from '@angular/core';
-import {CollapsedService} from '@layouts/admin/default/services/collapsed.service';
+import {Component, Injector} from '@angular/core';
+import {BaseComponent} from '@components/base.component';
+import {CollapsedService} from './services/collapsed.service';
 
 @Component({
-  selector: 'app-layout-admin-default',
   templateUrl: './default.component.html',
   styleUrls: ['./default.component.less']
 })
-export class LayoutAdminDefaultComponent {
+export class LayoutAdminDefaultComponent extends BaseComponent {
   constructor(
-    protected collapsedService: CollapsedService
-  ) {}
+    protected injector: Injector,
+    private collapsedService: CollapsedService
+  ) {
+    super(injector);
+  }
 }

@@ -2,6 +2,11 @@
  * APP配置
  */
 export const APP_CONFIG = {
+  // 后台LOGO路径
+  LAYOUT_ADMIN_LOGO_PATH: {
+    LOGO: './assets/logo-full.svg',
+    LOGO_MINI: './assets/logo.svg'
+  },
   // 正则表达式
   REGEX: {
     // 没有空格
