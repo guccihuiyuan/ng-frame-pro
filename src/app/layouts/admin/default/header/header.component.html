@@ -1,7 +1,7 @@
 <div class="header-logo" [ngClass]="{'layout-admin-collapsed': collapsedService.collapsed}">
   <a [routerLink]="['/']" class="header-logo-link">
-    <img src="./assets/logo-full.svg" alt="" style="max-height:40px;" *ngIf="!collapsedService.collapsed"/>
-    <img src="./assets/logo.svg" alt="" style="max-height:30px;" *ngIf="collapsedService.collapsed"/>
+    <img [src]="APP_CONFIG.LAYOUT_ADMIN_LOGO_PATH.LOGO" alt="" style="max-height:40px;" *ngIf="!collapsedService.collapsed"/>
+    <img [src]="APP_CONFIG.LAYOUT_ADMIN_LOGO_PATH.LOGO_MINI" alt="" style="max-height:30px;" *ngIf="collapsedService.collapsed"/>
   </a>
 </div>
 

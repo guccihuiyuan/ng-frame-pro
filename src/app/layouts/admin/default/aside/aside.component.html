@@ -1,6 +1,6 @@
 <div class="aside-inner">
   <ul nz-menu [nzMode]="'inline'" [nzInlineCollapsed]="collapsedService.collapsed">
-    <ng-template [ngTemplateOutlet]="menuTpl" [ngTemplateOutletContext]="{ $implicit: menus$ | async, level: 1 }"></ng-template>
+    <ng-template [ngTemplateOutlet]="menuTpl" [ngTemplateOutletContext]="{ $implicit: adminMenuService.change | async, level: 1 }"></ng-template>
 
     <!-- 遍历模板 -->
     <ng-template #menuTpl let-menus let-level="level">

@@ -1,5 +1,4 @@
 import {NgModule} from '@angular/core';
-import {AdminMenuService} from '@services/admin-menu/admin-menu.service';
 import {ACLService} from '@services/acl/acl.service';
 import {ACLDirective} from '@services/acl/acl.directive';
 
@@ -8,7 +7,6 @@ import {ACLDirective} from '@services/acl/acl.directive';
     ACLDirective
   ],
   providers: [
-    AdminMenuService,
     ACLService
   ],
   exports: [
