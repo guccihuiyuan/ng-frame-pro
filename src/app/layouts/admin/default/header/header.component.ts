@@ -13,6 +13,15 @@ export class LayoutAdminDefaultHeaderComponent extends BaseComponent {
     protected collapsedService: CollapsedService
   ) {
     super(injector);
+
+    // window.onresize = () => {
+    //   const width = document.body.clientWidth;
+    //   if (width < 768) {
+    //     this.collapsedService.collapsed = true;
+    //   } else {
+    //     this.collapsedService.collapsed = false;
+    //   }
+    // };
   }
   toggleCollapsedSidebar() {
     this.collapsedService.collapsed = !this.collapsedService.collapsed;
